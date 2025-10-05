@@ -20,7 +20,7 @@ stages:
     - task: AzureCLI@2
       inputs:
         azureSubscription: 'Azure-DevOps-Service-Connection'
-        scriptType: 'bash'
+        scriptType: 'ps'
         scriptLocation: 'inlineScript'
         inlineScript: |
           echo "Logging in to ACR"
