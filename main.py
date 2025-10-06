@@ -10,7 +10,7 @@ class QuoteRequest(BaseModel):
     vehicle_value: float
     coverage_type: str  # "basic" or "comprehensive"
 
-# Define the endpoint
+# Quote calculation endpoint
 @app.post("/quote")
 def get_quote(q: QuoteRequest):
     base_rate = 0.01  # 1% of vehicle value
@@ -25,3 +25,13 @@ def get_quote(q: QuoteRequest):
 
     premium = q.vehicle_value * (base_rate + age_penalty) * coverage_multiplier
     return {"premium": round(premium, 2), "currency": "USD"}
+
+# 🆕 Health check or test endpoint
+@app.get("/ping")
+def ping():
+    return {"message": "Pong 🏓 - CI/CD working!"}
+
+@app.get("/greet/{name}")
+def greet(name: str):
+    return {"message": f"Hello, {name} 👋"}
+
