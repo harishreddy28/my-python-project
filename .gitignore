@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
 *.pyc
+# Ignore documentation files
+Insurance Fastapi Azure Doc.docx
+insurance_fastapi_azure_doc.md
